@@ -1,0 +1,13 @@
+<%- include("./partials/header.ejs") %>
+
+<% articles.forEach((article)=>{ %>
+<a href="/articles/<%= userId%>/<%= article.slug%>/details">
+  <h3><%= article.title %></h3>
+</a>
+<p><%= article.author %></p>
+<span><%= article.likes %> Likes</span>
+<hr>
+<% }) %>
+</body>
+
+</html>

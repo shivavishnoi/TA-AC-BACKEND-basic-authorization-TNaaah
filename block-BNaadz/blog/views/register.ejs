@@ -1,0 +1,15 @@
+<%- include("./partials/header.ejs") %>
+  <form action="/users/register" method="POST">
+    <% if(error){ %>
+    <p><%= error %></p>
+    <% } %>
+    First Name: <input type="text" name="first_name" placeholder="First Name">
+    Last Name: <input type="text" name="last_name" placeholder="Last Name">
+    Email: <input type="email" name="email" placeholder="email">
+    Password: <input type="password" name="password" placeholder="password">
+    Country: <input type="text" name="country" placeholder="Country">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+
+</html>
