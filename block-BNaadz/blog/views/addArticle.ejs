@@ -1,0 +1,19 @@
+<%- include("./partials/header.ejs") %>
+<form action="/articles/<%= user.id %>/add" method="POST">
+  <% if(err){ %>
+  <p><%= err %></p>
+  <% } %>
+  <div>
+    Title: <input type="text" name="title" placeholder="title..">
+  </div>
+  <div>
+    Description: <textarea name="description" placeholder="Description" cols="30" rows="6"></textarea>
+  </div>
+  <div>
+    Author: <input type="text" name="author" placeholder="Author">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+</body>
+
+</html>
