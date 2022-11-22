@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <h2><%= article.title %></h2>
+    <p><%= article.description %></p>
+    <span><%= article.author %></span>
+    <span><%= article.likes %></span>
+    <div>
+      <a href="/articles/<%= article.slug %>/like">
+        <button>Like</button>
+      </a>
+    </div>
+  </section>
+  <section>
+    <h4>Add Comment</h4>
+    <form action="/comments/<%= userId %>/<%= article.id %>/add" method="POST">
+      Text: <textarea name="text" name="text" cols="30" rows="5" placeholder="Comment"></textarea>
+      Author: <input type="text" name="author" placeholder="Author..">
+      <button type="submit">Comment</button>
+    </form>
+    <h4>All Comments</h4>
+    <% article.comments.forEach((comment)=>{ %>
+    <h5><%= comment.text %></h5>
+    <span><%= comment.author %></span>
+    <hr>
+    <% }) %>
+  </section>
+</body>
+
+</html>
